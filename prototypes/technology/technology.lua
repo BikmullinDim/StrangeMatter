@@ -1,8 +1,44 @@
 data:extend({
+{
+		type = "technology",
+		name = "quantum-chromodynamics-base",
+		prerequisites = {"automation-2"},
+		icon = "__StrangeMatter__/graphics/technology/simple-quantum.png",
+		unit =
+		{
+		  count = 10,
+		  ingredients =
+		  {
+			{"science-pack-1", 2},
+			{"science-pack-2", 1}
+		  },
+		  time = 30
+		},
+		effects =
+		{
+			{
+				type = "unlock-recipe",
+				recipe = "matter-fabricator-mk0"
+			},
+			{
+				type = "unlock-recipe",
+				recipe = "strange-matter-fabrication"
+			},
+			{
+				type = "unlock-recipe",
+				recipe = "fill-strange-matter-barrel"
+			},
+			{
+				type = "unlock-recipe",
+				recipe = "empty-strange-matter-barrel"
+			}		
+		},
+		order = "e-f-a"
+	},
 	{
 		type = "technology",
 		name = "quantum-chromodynamics",
-		prerequisites = {"alien-technology", "advanced-oil-processing", "productivity-module"},
+		prerequisites = {"quantum-chromodynamics-base", "alien-technology", "advanced-oil-processing", "productivity-module"},
 		icon = "__StrangeMatter__/graphics/technology/quantum-chromodynamics.png",
 		unit =
 		{
@@ -21,19 +57,7 @@ data:extend({
 			{
 				type = "unlock-recipe",
 				recipe = "matter-fabricator"
-			},
-			{
-				type = "unlock-recipe",
-				recipe = "strange-matter-fabrication"
-			},
-			{
-				type = "unlock-recipe",
-				recipe = "fill-strange-matter-barrel"
-			},
-			{
-				type = "unlock-recipe",
-				recipe = "empty-strange-matter-barrel"
-			}		
+			}	
 		},
 		order = "e-f-a"
 	},
@@ -101,12 +125,11 @@ data:extend({
 	{
 		type = "technology",
 		name = "wood-synthesis",
-		prerequisites = {"quantum-chromodynamics"},
+		prerequisites = {"coal-synthesis"},
 		icon = "__StrangeMatter__/graphics/technology/wood-synthesis.png",
 		unit = 
 		{
 			count = 300,
-			-- count = 1,
 			ingredients = 
 			{
 				{"science-pack-1", 1},
@@ -126,15 +149,13 @@ data:extend({
 	{
 		type = "technology",
 		name = "stone-synthesis",
-		prerequisites = {"wood-synthesis"},
+		prerequisites = {"coal-synthesis"},
 		icon = "__StrangeMatter__/graphics/technology/stone-synthesis.png",
 		unit = 
 		{
 			count = 1000,
-			-- count = 1,
 			ingredients = 
 			{
-				{"alien-science-pack", 1},
 				{"science-pack-1", 2},
 				{"science-pack-2", 2},
 				{"science-pack-3", 2}
@@ -153,18 +174,15 @@ data:extend({
 	{
 		type = "technology",
 		name = "coal-synthesis",
-		prerequisites = {"stone-synthesis"},
+		prerequisites = {"iron-synthesis"},
 		icon = "__StrangeMatter__/graphics/technology/coal-synthesis.png",
 		unit = 
 		{
-			count = 1200,
-			-- count = 1,
+			count = 100,
 			ingredients = 
 			{
-				{"alien-science-pack", 1},
 				{"science-pack-1", 2},
-				{"science-pack-2", 2},
-				{"science-pack-3", 2}
+				{"science-pack-2", 2}
 			},
 			time = 30
 		},
@@ -180,18 +198,14 @@ data:extend({
 	{
 		type = "technology",
 		name = "iron-synthesis",
-		prerequisites = {"stone-synthesis"},
+		prerequisites = {"quantum-chromodynamics-base"},
 		icon = "__StrangeMatter__/graphics/technology/iron-synthesis.png",
 		unit = 
 		{
-			count = 1800,
-			-- count = 1,
+			count = 30,
 			ingredients = 
 			{
-				{"alien-science-pack", 1},
-				{"science-pack-1", 2},
-				{"science-pack-2", 2},
-				{"science-pack-3", 2}
+				{"science-pack-1", 1},
 			},
 			time = 30
 		},
@@ -207,18 +221,14 @@ data:extend({
 	{
 		type = "technology",
 		name = "copper-synthesis",
-		prerequisites = {"stone-synthesis"},
+		prerequisites = {"quantum-chromodynamics-base"},
 		icon = "__StrangeMatter__/graphics/technology/copper-synthesis.png",
 		unit = 
 		{
-			count = 2200,
-			-- count = 1,
+			count = 20,
 			ingredients = 
 			{
-				{"alien-science-pack", 1},
-				{"science-pack-1", 2},
-				{"science-pack-2", 2},
-				{"science-pack-3", 2}
+				{"science-pack-1", 2}
 			},
 			time = 30
 		},
@@ -235,12 +245,11 @@ data:extend({
 	{
 		type = "technology",
 		name = "oil-synthesis",
-		prerequisites = {"quantum-chromodynamics"},
+		prerequisites = {"quantum-chromodynamics-base", "oil-processing"},
 		icon = "__StrangeMatter__/graphics/technology/oil-synthesis.png",
 		unit = 
 		{
 			count = 800,
-			-- count = 1,
 			ingredients = 
 			{
 				{"science-pack-1", 1},
@@ -265,7 +274,6 @@ data:extend({
 		unit = 
 		{
 			count = 1000,
-			-- count = 1,
 			ingredients = 
 			{
 				{"science-pack-1", 1},
@@ -344,7 +352,6 @@ data:extend({
 		unit = 
 		{
 			count = 1000,
-			-- count = 1,
 			ingredients = 
 			{
 				{"science-pack-1", 2},

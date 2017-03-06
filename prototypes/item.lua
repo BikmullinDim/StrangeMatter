@@ -2,6 +2,17 @@ data:extend(
 {
 	{
 		type = "item",
+		name = "matter-fabricator-mk0",
+		icon = "__StrangeMatter__/graphics/icons/simple-matter-fabricator-icon.png",
+		flags = {"goes-to-quickbar"},
+		subgroup = "matter-machines",
+		enabled = false,
+		order = "b[matter-fabricator]",
+		place_result = "matter-fabricator-mk0",
+		stack_size = 10
+	},
+	{
+		type = "item",
 		name = "matter-fabricator",
 		icon = "__StrangeMatter__/graphics/icons/matter-fabricator-icon.png",
 		flags = {"goes-to-quickbar"},
